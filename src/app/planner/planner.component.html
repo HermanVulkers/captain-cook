@@ -1,0 +1,11 @@
+<div>
+  <app-card
+    *ngFor="let recipe of recipes"
+    [name]="recipe.name"
+    [imageUrl]="recipe.imageUrl"
+    [portionSize]="recipe.portionSize"
+    [id]="recipe.id"
+    (remove)="removeRecipe(recipe.id)"
+  ></app-card>
+</div>
+<button (click)="addRecipe()">+</button>

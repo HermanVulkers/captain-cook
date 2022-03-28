@@ -1,0 +1,37 @@
+.card {
+  align-items: center;
+  background-color: #efefef;
+  column-gap: 20px;
+  display: flex;
+  height: 80px;
+  margin: 30px;
+}
+
+button {
+  margin-right: 30px;
+  background: none;
+  border: 2px solid red;
+  font-size: 18px;
+  color: red;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.name {
+  color: grey;
+  font-size: 20px;
+}
+
+.portionSize {
+  color: white;
+  flex-grow: 2;
+  font-size: 60px;
+  text-align: end;
+}
+
+img {
+  height: 100%;
+  object-fit: cover;
+  width: 25%;
+}
