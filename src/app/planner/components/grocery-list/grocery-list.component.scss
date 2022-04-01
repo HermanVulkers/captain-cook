@@ -1,0 +1,50 @@
+p {
+  margin: 0px;
+  color: rgb(20, 20, 20);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  column-gap: 8px;
+}
+
+.grocery-list-container {
+  border-left: 1px solid rgb(255, 79, 79);
+  padding-left: 8px;
+}
+
+li {
+  border-bottom: 1px solid rgb(185, 185, 255);
+  padding-bottom: 2px;
+  margin-bottom: 8px;
+}
+
+img {
+  height: 25px;
+}
+
+ul {
+  list-style: none;
+  padding: 0px;
+}
+
+.title {
+  font-weight: 500;
+}
+
+.grocery-list-items {
+  display: flex;
+}
+
+.name {
+  width: 200px;
+}
+.portion {
+  display: flex;
+  width: 20%;
+}
+
+.unit {
+  margin-left: 2px;
+}

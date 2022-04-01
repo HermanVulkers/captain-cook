@@ -1,11 +1,18 @@
-<div>
-  <app-card
-    *ngFor="let recipe of recipes"
-    [name]="recipe.name"
-    [imageUrl]="recipe.imageUrl"
-    [portionSize]="recipe.portionSize"
-    [id]="recipe.id"
-    (remove)="removeRecipe(recipe.id)"
-  ></app-card>
+<div class="planner-container">
+  <div class="planner">
+    <app-card
+      *ngFor="let recipe of recipes"
+      [name]="recipe.name"
+      [imageUrl]="recipe.imageUrl"
+      [portionSize]="recipe.portionSize"
+      [id]="recipe.id"
+      (remove)="removeRecipe(recipe.id)"
+      >{{ recipe.name }}</app-card
+    >
+    <app-button (click)="addRecipe()">Add</app-button>
+  </div>
+
+  <div class="aside">
+    <app-aside><app-grocery-list [recipes]="recipes"></app-grocery-list></app-aside>
+  </div>
 </div>
-<button (click)="addRecipe()">+</button>

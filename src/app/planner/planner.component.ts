@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import { PlannedService } from "../shared/services/planned.service";
 
 @Component({
   selector: "app-planner",
@@ -6,44 +7,26 @@ import { Component, OnInit } from "@angular/core";
   styleUrls: ["./planner.component.scss"],
 })
 export class PlannerComponent implements OnInit {
-  recipes = [
-    {
-      id: 1,
-      name: "Pasta zalm met spinazie en cherrytomaten",
-      portionSize: "2p",
-      imageUrl: "../../assets/images/zalm.jpg",
-    },
-    {
-      id: 2,
-      name: "Curry met bloemkool",
-      portionSize: "3p",
-      imageUrl: "../../assets/images/curry.jpg",
-    },
-    {
-      id: 3,
-      name: "Ovenschaal met aardappels en broccoli",
-      portionSize: "2p",
-      imageUrl: "../../assets/images/aardappelschotel.jpg",
-    },
-  ];
+  recipes: {
+    name: string;
+    imageUrl: string;
+    portionSize: string;
+    id: number;
+    ingredients: { name: string; amount: number; unit: string }[];
+  }[] = [];
 
-  addRecipe = () => {
-    this.recipes = [
-      ...this.recipes,
-      {
-        id: 4,
-        name: "Patat met kip",
-        portionSize: "4p",
-        imageUrl: "../../assets/images/patatmetkip.jpg",
-      },
-    ];
-  };
+  constructor(private plannedService: PlannedService) {}
 
-  removeRecipe = (id: number) => {
-    this.recipes = this.recipes.filter((recipe) => recipe.id !== id);
-  };
+  ngOnInit() {
+    this.recipes = this.plannedService.data;
+    this.plannedService.recipesChange.subscribe((data) => (this.recipes = data));
+  }
 
-  constructor() {}
+  removeRecipe(id: number) {
+    this.plannedService.removeRecipe(id);
+  }
 
-  ngOnInit(): void {}
+  addRecipe() {
+    this.plannedService.addRecipe();
+  }
 }

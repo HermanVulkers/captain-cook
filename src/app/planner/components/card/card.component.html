@@ -1,10 +1,8 @@
 <div class="card">
   <img src="{{ imageUrl }}" />
-  <p class="name">
-    {{ name }}
-  </p>
+  <p class="name"><ng-content></ng-content></p>
   <p class="portionSize">
     {{ portionSize }}
   </p>
-  <button (click)="removeRecipe(id)">X</button>
+  <app-button (click)="removeRecipe(id)">Delete</app-button>
 </div>

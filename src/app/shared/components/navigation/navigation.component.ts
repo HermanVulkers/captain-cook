@@ -8,5 +8,12 @@ import { Component, OnInit } from "@angular/core";
 export class NavigationComponent implements OnInit {
   constructor() {}
 
+  isOpen = false;
+
+  toggleMenu() {
+    this.isOpen = !this.isOpen;
+    console.log(this.isOpen);
+  }
+
   ngOnInit(): void {}
 }

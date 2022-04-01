@@ -1,0 +1,11 @@
+<div>
+  <button (click)="toggleMenu()"><img src="../../../../assets/icons/hamburger-menu.svg" /></button>
+
+  <div [ngClass]="{ showBackdrop: isOpen }" (click)="toggleMenu()"></div>
+
+  <ul [ngClass]="{ hideMenu: !isOpen }">
+    <li *ngFor="let item of items">
+      <a [routerLink]="item.routerLink">{{ item.text }}</a>
+    </li>
+  </ul>
+</div>

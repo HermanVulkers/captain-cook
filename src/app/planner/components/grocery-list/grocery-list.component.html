@@ -1,0 +1,19 @@
+<div class="grocery-list-container">
+  <div class="header">
+    <p class="title">Grocery List</p>
+    <img src="../../../../assets/icons/shopping-cart.png" />
+  </div>
+  <div class="grocery-list">
+    <ul>
+      <li *ngFor="let ingredient of ingredients">
+        <div class="grocery-list-items">
+          <p class="name">{{ ingredient.name }}</p>
+          <div class="portion">
+            <p class="amount">{{ ingredient.amount }}</p>
+            <p class="unit">{{ ingredient.unit }}</p>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
